@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav">
+      <button class ="btn btn-primary" style="margin-right: 10px" (click)="getAllMembers()">Obnovit</button>
+      <a class ="btn btn-secondary" routerLink="add">Přidat</a>
+    </div>
+  </div>
+  <table class="table">
+    <tr>
+      <th>id</th>
+      <th>Jméno</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Vytvořen</th>
+    </tr>
+    <tr *ngFor="let item of list">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.role}}</td>
+      <td>{{item.created_at}}</td>
+    </tr>
+  </table>
+</div>
