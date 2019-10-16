@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-  nevim = [];
+  list = [];
   constructor(private router: Router, private memberService: MemberlistService) { }
 
   ngOnInit() {
@@ -18,9 +18,9 @@ export class MembersComponent implements OnInit {
     this.memberService.addMember(data)
       .subscribe(
       (res: []) => {
-        console.log(this.nevim);
+        console.log(this.list);
         // Update the list of cars
-        this.nevim = res;
+        this.list = res;
         this.router.navigateByUrl('/create');
       }
     );
